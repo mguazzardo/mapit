@@ -108,8 +108,8 @@ pipeline {
 
           openshift.withCluster() {
 
-            openshift.newApp("mapit:latest", "--name=mapit-dev").narrow('svc').expose()
-
+            //openshift.newApp("mapit:latest", "--name=mapit-dev").narrow('svc').expose()
+	    openshift.newApp( 'https://github.com/openshift/ruby-hello-world' ).narrow('bc')
           }
 
         }
